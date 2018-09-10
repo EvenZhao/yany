@@ -23,6 +23,24 @@ module.exports = {
 				exclude: /node_modules/ // 引入的模块几乎都是向下兼容的，这部分的代码不需要走 loader
 			},
 			{
+				test: /\.css$/,
+				use: [ 'style-loader', 'css-loader' ],
+			},
+			{
+				test: /\.less$/,
+				use: [
+					{
+						loader: "style-loader",
+					},
+					{
+						loader: "css-loader",
+					},
+					{
+						loader: "less-loader",
+					},
+				],
+			},
+			{
 				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 				loader: 'url-loader',
 				options: {
@@ -43,6 +61,7 @@ module.exports = {
 	plugins: [
 		new webpack.ProvidePlugin({
 			_: 'underscore',
+			React: 'react',
 		}),
 		new HtmlWebpackPlugin({
 			template: './index.html',

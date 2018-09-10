@@ -1,0 +1,194 @@
+.layout {
+    padding: 0 30px;
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    .layout-child {
+        flex-grow: 2;
+        border: 1px red solid;
+    }
+    .layout-right {
+        flex-grow: 7;
+        border-left: 1px solid #e9e9e9;
+    }
+}
+
+.layout {
+    @media (max-width:768px) {
+        padding: 0 15px;
+        min-height: 0;
+        .layout-child {
+            width: 100vw;
+            flex-grow: 0;  
+            align-items: flex-start; 
+        }
+    }
+}
+
+ul.list-wrap {
+	font-size: 24px;
+	font-weight: bold;
+	padding: 10px;
+	li {
+		border-bottom: 1px #e9e9e9 solid;
+		padding: 10px;
+		.title {
+			color: green;
+		}
+		.tags i {
+			font-size: 16px;
+			background: #aaa;
+			color: #fff;
+			margin-left: 9px;
+			padding: 3px;
+		}
+	}
+	
+}
+
+
+// #quote_1 {
+//     zoom: 0.7;
+//   height: 200px;
+//   width: 200px;
+//   position: relative;
+//   font: bold 18pt 'Marck Script';
+//   margin: 50px;
+// }
+
+// /* design quote text and author text
+//         *************************************/
+
+// #quote_1_author,
+// #quote_1_text {
+//   width: 70%;
+//   height: 70%;
+//   /* centering the elements inside their parent */
+//   position: absolute;
+//   margin: auto;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   /*  centering elements’ own text/children */
+//   text-align: center;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   /* transition for hover out */
+//   transition: opacity .5s ease .5s;
+// }
+
+// #quote_1_text {
+//   /* hide quote's text at first */
+//   opacity: 0;
+// }
+
+// u {
+//   /* underline style for author's name */
+//   text-decoration-color: #FA023C;
+//   text-decoration-style: double;
+// }
+
+
+// /* design pseudo elements
+//         (corner borders)
+//         ***********************************/
+
+// #quote_1::before,
+// #quote_1::after {
+//   display: block;
+//   content: '';
+//   width: 50%;
+//   height: 50%;
+//   position: absolute;
+//   /* add border details, but borders won't appear just with these */
+//   border-color: #C8FF00;
+//   border-width: 10px;
+//   border-radius: 10%;
+//   /* transition on hover out */
+//   transition: transform 1s linear;
+// }
+
+
+// /* add top-left corner borders */
+
+// #quote_1::before {
+//   border-top-style: solid;
+//   border-left-style: solid;
+//   left: -10px;
+//   top: -10px;
+// }
+
+
+// /* add bottom-right corner borders */
+
+// #quote_1::after {
+//   border-bottom-style: solid;
+//   border-right-style: solid;
+//   right: -10px;
+//   bottom: -10px;
+// }
+
+
+// /* ► quote text & author text animations
+//         ***************************************/
+
+// #quote_1:hover > #quote_1_author,
+// #quote_1:hover > #quote_1_text {
+//   transition: opacity .5s ease 1.5s;
+// }
+
+// #quote_1:hover > #quote_1_author {
+//   /* hide author */
+//   opacity: 0;
+// }
+
+// #quote_1:hover > #quote_1_text {
+//   /* show quote's text */
+//   opacity: 1;
+// }
+
+
+// /* ► pseudo element animations
+//         (corner borders)
+//         *******************************/
+
+// #quote_1:hover::before,
+// #quote_1:hover::after {
+//   animation-duration: 2s;
+//   animation-fill-mode: forwards;
+//   animation-timing-function: linear;
+// }
+
+// #quote_1:hover::before {
+//   animation-name: quote_1_lCorner_animate;
+// }
+
+// #quote_1:hover::after {
+//   animation-name: quote_1_rCorner_animate;
+// }
+
+
+// /* left corner animation function */
+
+// @keyframes quote_1_lCorner_animate {
+//   50% {
+//     transform: rotate(180deg);
+//   }
+//   100% {
+//     transform: translate(100%, 100%) rotate(180deg);
+//   }
+// }
+
+
+// /* right corner animation function */
+
+// @keyframes quote_1_rCorner_animate {
+//   50% {
+//     transform: rotate(180deg);
+//   }
+//   100% {
+//     transform: translate(-100%, -100%) rotate(180deg);
+//   }
+// }
