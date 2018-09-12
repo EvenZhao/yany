@@ -19,7 +19,7 @@ module.exports = {
 		rules: [
 			{
                 test: /\.(js|jsx)?$/,
-				loader: "babel-loader",
+				loader: 'babel-loader',
 				exclude: /node_modules/ // 引入的模块几乎都是向下兼容的，这部分的代码不需要走 loader
 			},
 			{
@@ -30,13 +30,13 @@ module.exports = {
 				test: /\.less$/,
 				use: [
 					{
-						loader: "style-loader",
+						loader: 'style-loader',
 					},
 					{
-						loader: "css-loader",
+						loader: 'css-loader',
 					},
 					{
-						loader: "less-loader",
+						loader: 'less-loader',
 					},
 				],
 			},
@@ -62,6 +62,7 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			_: 'underscore',
 			React: 'react',
+			ReactDOM: 'react-dom',
 		}),
 		new HtmlWebpackPlugin({
 			template: './index.html',

@@ -1,27 +1,39 @@
+import '../assets/List.less';
 export default class List extends React.Component {
+    constructor(props) {
+        super(props);
+        this.wrap = React.createRef();
+    }
+
     render() {
         return (
-            <div>
-                <ul className="list-wrap">
-                    <li>
-                        <p className="title dib">经济学讲义整理</p>
-                        <p className="dib">- April 20,2018</p>
-                        <p className="tags dib"><i>Reading</i><i>Economics</i></p>
-                    </li>
-
-                    <li>
-                        <p className="title dib">经济学讲义整理</p>
-                        <p className="dib">- April 20,2018</p>
-                        <p className="tags dib"><i>Reading</i><i>Economics</i></p>
-                    </li>
-
-                    <li>
-                        <p className="title dib">经济学讲义整理</p>
-                        <p className="dib">- April 20,2018</p>
-                        <p className="tags dib"><i>Reading</i><i>Economics</i></p>
-                    </li>
-                </ul>
+            <div ref={ this.wrap }>
+                {/* <ul>
+                    {
+                        new Array(10).fill(1).map((item, index) => {
+                            return (
+                                <li key={ index }>
+                                    {index + 1}
+                                </li>
+                            )
+                        })
+                    }
+                    <li>加载更多</li>
+                </ul> */}
             </div>
         )
     }
-};
+
+    componentDidMount() {
+        const wrapDOM = ReactDOM.findDOMNode(this.wrap.current.parentNode);
+        wrapDOM.addEventListener('scroll', () => {
+            const eleHeight = wrapDOM.scrollHeight;
+            const screenHeight = window.innerHeight;
+            const scrollTop = wrapDOM.scrollTop;
+            
+            if (eleHeight - screenHeight === scrollTop) {
+                console.log('request');
+            }
+        });
+    }
+}

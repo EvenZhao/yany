@@ -4,26 +4,24 @@ import List from '../components/List';
 import Info from '../components/Info';
 
 import '../../node_modules/cube.css/build/cube.css';
-import '../assets/main.less';
+import '../assets/public.less';
 
 export default class App extends React.Component {
     render() {
         return (
             <Router>
-                <div className="layout">
-                    <div className="layout-child layout-left">
+                <div className="layout-wrap">
+                    <div className="layout-child">
                         <Info />
                     </div>
 
-                    <div className="layout-child layout-right">
+                    <div className="layout-child">
                         <Route 
-                            exact 
                             component={ List }
+                            exact 
                             path="/"
                             
                         />
-                        {/* <Route path="/content" component={Content} /> */}
-                        {/* <Route path="about" component={About} /> */}
                     </div>
                 </div>
             </Router>

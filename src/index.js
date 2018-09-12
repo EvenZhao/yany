@@ -1,7 +1,6 @@
-import { render } from 'react-dom';
 import App from './containers/App';
 
-render(
+ReactDOM.render(
   <App />,
   document.getElementById('app'),
 );
